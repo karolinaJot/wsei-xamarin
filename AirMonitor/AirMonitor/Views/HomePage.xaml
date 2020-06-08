@@ -6,11 +6,15 @@
              mc:Ignorable="d"
              x:Class="AirMonitor.Views.HomePage"
 			 Title="Home Page">
-  
-        <Button 
-			Text="Go to details"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-			Command="{ Binding GoToDetailsCommand}"/>
+
+	<ListView ItemsSource="{Binding Items}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<TextCell Text="{Binding Installation.Address.Description}"
+						  Detail="Later to do"/>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+		
+	</ListView>
     
 </ContentPage>

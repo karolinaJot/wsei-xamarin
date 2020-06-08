@@ -17,7 +17,7 @@ using Xamarin.Forms;
 
 namespace AirMonitor.ViewModels
 {
-    public class HomeViewModel
+    public class HomeViewModel : BaseViewModel
     {
         private readonly INavigation _navigation;
 
@@ -27,22 +27,27 @@ namespace AirMonitor.ViewModels
         {
             _navigation = navigation;
 
-
-
             Initialize();
         }
 
+        private List<Installation> _items;
+         public List<Installation> Items
+        {
+            get => _items;
+            set => SetProperty(ref _items, value);
+        }
 
 
         private async Task Initialize()
         {
-            var location = await GetLocation();
-            var installations = await GetInstallations(location, maxResults: 7);
+            Location location = await GetLocation();
+            var installations = await GetInstallations( location, maxResults: 3);
+            Items = new List<Installation>(installations);
 
 
 
         }
-        private async Task<IEnumerable<Installation>> GetInstallations(Location location, double maxDistanceInKm = 3, int maxResults = -1)
+        private async Task<IEnumerable<Installation>> GetInstallations(Models.Location location, double maxDistanceInKm = 3, int maxResults = -1)
         {
             if (location == null)
             {
@@ -180,9 +185,9 @@ namespace AirMonitor.ViewModels
 
 
 
-        private async Task<Location> GetLocation()
+        private async Task<Xamarin.Essentials.Location> GetLocation()
         {
-            Location location = await Geolocation.GetLastKnownLocationAsync();
+            Xamarin.Essentials.Location location = await  Geolocation.GetLastKnownLocationAsync();
             return location;
         }
 

@@ -24,8 +24,8 @@
         <Grid>
             <StackLayout Style="{StaticResource DetailsLayoutStyle}">
                 <Frame Style="{StaticResource CaqiFrameStyle}">
-                    <Label Style="{StaticResource CenteredTextStyle}"
-                        <Label.FormattedText>
+					<Label Style="{StaticResource CenteredTextStyle}">
+						<Label.FormattedText>
                             <FormattedString>
                                 <Span
                                     Text="{ Binding CaqiValue }"
