@@ -40,14 +40,14 @@ namespace AirMonitor.ViewModels
 
         private async Task Initialize()
         {
-            Location location = await GetLocation();
+            var location = await GetLocation();
             var installations = await GetInstallations( location, maxResults: 3);
             Items = new List<Installation>(installations);
 
 
 
         }
-        private async Task<IEnumerable<Installation>> GetInstallations(Models.Location location, double maxDistanceInKm = 3, int maxResults = -1)
+        private async Task<IEnumerable<Installation>> GetInstallations(Xamarin.Essentials.Location location, double maxDistanceInKm = 3, int maxResults = -1)
         {
             if (location == null)
             {

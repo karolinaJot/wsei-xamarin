@@ -10,7 +10,7 @@
 	<ListView ItemsSource="{Binding Items}">
 		<ListView.ItemTemplate>
 			<DataTemplate>
-				<TextCell Text="{Binding Installation.Address.Description}"
+				<TextCell Text="{Binding Address.Description}"
 						  Detail="Later to do"/>
 			</DataTemplate>
 		</ListView.ItemTemplate>
