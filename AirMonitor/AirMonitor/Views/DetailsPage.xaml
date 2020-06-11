@@ -110,10 +110,10 @@
                     <controls:ContentWithHeader.ControlContent>
                         <StackLayout>
                             <Label
-                                Text="{Binding HumidityValue, Converter={StaticResource ValueToPercent}, StringFormat='{0}%'}"
+                                Text="{Binding HumidityPercent, Converter={StaticResource ValueToPercent}, StringFormat='{0}%'}"
                                 Style="{StaticResource NormalTextLabelStyle}"/>
                             <Slider
-                                Value="{Binding HumidityValue}"
+                                Value="{Binding HumidityPercent}"
                                 Style="{StaticResource SliderStyle}"/>
                         </StackLayout>
                     </controls:ContentWithHeader.ControlContent>
@@ -125,13 +125,13 @@
                     <controls:ContentWithHeader.ControlContent>
                         <StackLayout>
                             <Label
-                                Text="{Binding PresserValue, StringFormat='{0} hPa'}"
+                                Text="{Binding PressureValue, StringFormat='{0} hPa'}"
                                 Style="{StaticResource NormalTextLabelStyle}"/>
                             <!-- Set Maximum before Minimum in Slider -->
                             <Slider
                                 Maximum="1100"
                                 Minimum="900"
-                                Value="{Binding PresserValue}"
+                                Value="{Binding PressureValue}"
                                 Style="{StaticResource SliderStyle}"/>
                         </StackLayout>
                     </controls:ContentWithHeader.ControlContent>
