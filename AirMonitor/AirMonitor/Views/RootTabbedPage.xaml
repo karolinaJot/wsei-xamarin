@@ -14,6 +14,11 @@
 			<views:HomePage/>
 		</x:Arguments>
 	</NavigationPage>
+	<NavigationPage Title="Map" IconImageSource="map">
+		<x:Arguments>
+			<views:MapPage/>
+		</x:Arguments>
+	</NavigationPage>
 	<NavigationPage Title="Settings">
 		<x:Arguments>
 			<views:SettingsPage/>
